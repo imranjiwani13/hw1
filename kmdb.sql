@@ -202,3 +202,16 @@ VALUES (1, 'Bruce Wayne', 1, 1),
        (13, 'Bane', 3, 9),
        (14, 'John Blake', 3, 10),
        (15, 'Selina Kye', 3, 11);
+
+
+
+SELECT m.title, m.year, m.rating, s.name as studio_name
+FROM movies m
+JOIN studio s ON m.studio_ID = s.studio_ID;
+
+
+SELECT m.title as movie_title, a.name as actor_name, r.name as role_name
+FROM roles r
+JOIN movies m ON r.movie_ID = m.movie_ID
+JOIN actors a ON r.actor_ID = a.actor_ID;
+
