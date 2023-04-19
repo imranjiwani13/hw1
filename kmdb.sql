@@ -156,11 +156,49 @@ CREATE TABLE actors (
   name TEXT NOT NULL
 );
 
-DROP TABLE IF EXISTS role;
+DROP TABLE IF EXISTS roles;
 
-CREATE TABLE role (
+CREATE TABLE roles (
   role_ID INT PRIMARY KEY,
   name TEXT NOT NULL,
   movie_ID INT,
   actor_ID INT
 );
+
+INSERT INTO movies (movie_ID, title, year, rating, studio_ID)
+VALUES (1, 'Batman Begins', 2005, 'PG-13', 1),
+       (2, 'The Dark Knight', 2008, 'PG-13', 1),
+       (3, 'The Dark Knight Rises', 2012, 'PG-13', 1);
+
+INSERT INTO studio (studio_ID, name)
+VALUES (1, 'Warner Bros.');
+
+INSERT INTO actors (actor_ID, name)
+VALUES (1, 'Christian Bale'),
+       (2, 'Michael Caine'),
+       (3, 'Liam Neeson'),
+       (4, 'Katie Holmes'),
+       (5, 'Gary Oldman'),
+       (6, 'Heath Ledger'),
+       (7, 'Aaron Eckhart'),
+       (8, 'Maggie Gyllenhaal'),
+       (9, 'Tom Hardy'),
+       (10, 'Joseph Gordon-Levitt'),
+       (11, 'Anne Hathaway');
+
+INSERT INTO roles (role_ID, name, movie_ID, actor_ID)
+VALUES (1, 'Bruce Wayne', 1, 1),
+       (2, 'Bruce Wayne', 2, 1),
+       (3, 'Bruce Wayne', 3, 1),
+       (4, 'Alfred', 1, 2),
+       (5, 'Alfred', 2, 2),
+       (6, 'Ra''s Al Ghul', 1, 3),
+       (7, 'Rachel Dawes', 1, 4),
+       (8, 'Rachel Dawes', 2, 4),
+       (9, 'Commissioner Gordon', 1, 5),
+       (10, 'Commissioner Gordon', 3, 5),
+       (11, 'Joker', 2, 6),
+       (12, 'Harvey Dent', 2, 7),
+       (13, 'Bane', 3, 9),
+       (14, 'John Blake', 3, 10),
+       (15, 'Selina Kye', 3, 11);
